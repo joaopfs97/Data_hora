@@ -1,13 +1,10 @@
 package Application;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+import java.time.temporal.ChronoUnit;
 
 public class Program {
 
@@ -35,7 +32,7 @@ public class Program {
         System.out.println("Data e hora local com imput: " + d09);
         */
         
-        // Convertendo data-hora
+        /*// Convertendo data-hora
         LocalDate d04 = LocalDate.parse("2022-08-16");
         LocalDateTime d05 = LocalDateTime.parse("2022-08-16T15:08:20");
         Instant d06 = Instant.parse("2022-08-16T15:08:20Z");
@@ -56,6 +53,36 @@ public class Program {
         System.out.println("d06 = " + fmt3.format(d06));
         System.out.println("d06 = " + fmt5.format(d06));
         System.out.println("d06 = " + d06.toString());
+        */
+        
+        LocalDate d04 = LocalDate.parse("2022-08-16");
+        LocalDateTime d05 = LocalDateTime.parse("2022-08-16T15:08:20");
+        Instant d06 = Instant.parse("2022-08-16T15:08:20Z");
+        
+        LocalDate pastWeekLocalDate = d04.minusDays(7);
+        LocalDate nextWeekLocalDate = d04.plusDays(7);
+        
+        System.out.println("Past Week = " + pastWeekLocalDate);
+        System.out.println("Next Week = " + nextWeekLocalDate);
+        
+        
+        LocalDateTime pastWeekLocalDateTime = d05.minusDays(7);
+        LocalDateTime nextWeekLocalDateTime = d05.plusDays(7);
+        
+        System.out.println("Past Week = " + pastWeekLocalDateTime);
+        System.out.println("Next Week = " + nextWeekLocalDateTime);
+        
+        
+        Instant pastWeekInstant = d06.minus(7, ChronoUnit.DAYS);
+        Instant nextWeekInstant = d06.minus(7, ChronoUnit.DAYS);
+        
+        System.out.println("Past Week = " + pastWeekInstant);
+        System.out.println("Next Week = " + nextWeekInstant);
+        
+        
+        Duration t1 = Duration.between(pastWeekLocalDateTime, nextWeekLocalDateTime);
+        System.out.println("Duration = " + t1.toDays());
+       
         
     }
     
