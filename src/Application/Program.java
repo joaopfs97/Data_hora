@@ -54,7 +54,7 @@ public class Program {
         System.out.println("d06 = " + fmt5.format(d06));
         System.out.println("d06 = " + d06.toString());
         */
-        
+        /* // Diferença entre data-horas
         LocalDate d04 = LocalDate.parse("2022-08-16");
         LocalDateTime d05 = LocalDateTime.parse("2022-08-16T15:08:20");
         Instant d06 = Instant.parse("2022-08-16T15:08:20Z");
@@ -82,7 +82,7 @@ public class Program {
         
         Duration t1 = Duration.between(pastWeekLocalDateTime, nextWeekLocalDateTime);
         System.out.println("Duration = " + t1.toDays());
-       
+       */
         
     }
     
